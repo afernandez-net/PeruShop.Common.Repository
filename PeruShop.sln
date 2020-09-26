@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeruShop.Common.Repository", "src\PeruShop.Common.Repository\PeruShop.Common.Repository.csproj", "{1CCA8F59-D149-4F04-BAAA-174EC6B26392}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeruShop.Services.Customers", "src\PeruShop.Services.Customers\PeruShop.Services.Customers.csproj", "{47261F6A-2A2B-417B-B313-2EABD6407087}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CCA8F59-D149-4F04-BAAA-174EC6B26392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CCA8F59-D149-4F04-BAAA-174EC6B26392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CCA8F59-D149-4F04-BAAA-174EC6B26392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CCA8F59-D149-4F04-BAAA-174EC6B26392}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47261F6A-2A2B-417B-B313-2EABD6407087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47261F6A-2A2B-417B-B313-2EABD6407087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47261F6A-2A2B-417B-B313-2EABD6407087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47261F6A-2A2B-417B-B313-2EABD6407087}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6327C705-ADAC-46F6-83A3-38CEE50548F3}
+	EndGlobalSection
+EndGlobal
