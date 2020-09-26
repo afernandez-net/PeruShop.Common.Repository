@@ -26,7 +26,7 @@ namespace PeruShop.Services.Customers
             services.AddDbContext<CustomersDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("Customers")));
 
             services.AddSql<CustomersDbContext>()
-                    .AddRepository<Customer>()
+                    .AddRepository<Customer>(x => x.Seed = CustomersDbContextSeed.Customers)
                     .AddRepository<OtherEntity>();
 
             services.AddScoped<ICustomersRepository, CustomersRepository>();
