@@ -8,7 +8,7 @@
     /// </summary>
     public static class Extensions
     {
-        public static IRepository<TContext> AddSql<TContext>(this IServiceCollection services)
+        public static IRepository<TContext> AddRepository<TContext>(this IServiceCollection services)
             where TContext : DbContext
         {
             using var serviceScope = services
@@ -24,7 +24,5 @@
 
             return new Repository<TContext>(services);
         }
-
-
     }
 }

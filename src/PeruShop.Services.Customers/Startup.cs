@@ -8,6 +8,7 @@ using PeruShop.Common.Repository;
 using PeruShop.Services.Customers.Domain;
 using PeruShop.Services.Customers.Infrastructure;
 using PeruShop.Services.Customers.Repositories;
+using System;
 
 namespace PeruShop.Services.Customers
 {
@@ -24,12 +25,13 @@ namespace PeruShop.Services.Customers
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CustomersDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("Customers")));
+            //services.AddDbContext<CustomersDbContext>(x => x.UseInMemoryDatabase("Customers"));
 
-            services.AddSql<CustomersDbContext>()
-                    .AddRepository<Customer>(x => x.Seed = CustomersDbContextSeed.Customers)
-                    .AddRepository<OtherEntity>();
+            services.AddRepository<CustomersDbContext>()
+                .RepositoryOptions<Customer>(x => x.Seed = CustomersDbContextSeed.Customers)
+                .RepositoryOptions<OrderItem>(x => x.Seed = CustomersDbContextSeed.OrderItems);
 
-            services.AddScoped<ICustomersRepository, CustomersRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
 
             services.AddControllers();
         }

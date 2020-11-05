@@ -11,9 +11,9 @@
     [ApiController]
     public class CustomersController : ControllerBase
     {
-        private readonly ICustomersRepository customersRepository;
+        private readonly ICustomerRepository customersRepository;
 
-        public CustomersController(ICustomersRepository customersRepository)
+        public CustomersController(ICustomerRepository customersRepository)
         {
             this.customersRepository = customersRepository;
         }
@@ -22,7 +22,7 @@
         [HttpGet]
         public async Task<IEnumerable<Customer>> Get()
         {
-            return await customersRepository.BrowseAsync();
+            return await customersRepository.FindAsync(_ => true);
         }
 
         // GET: api/Customers/5

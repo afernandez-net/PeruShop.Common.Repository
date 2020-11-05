@@ -11,7 +11,12 @@
         }
 
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<OtherEntity> OtherEntities { get; set; }
+        public virtual DbSet<OrderItem> OrderItems { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<OrderItem>().HasKey(x => new { x.CustomerId,x.ProductId });
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
            => optionsBuilder

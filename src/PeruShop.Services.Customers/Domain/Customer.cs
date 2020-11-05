@@ -1,8 +1,9 @@
 ﻿namespace PeruShop.Services.Customers.Domain
 {
     using PeruShop.Common.Repository;
+    using System;
 
-    public class Customer : BaseEntity
+    public class Customer : Entity<Guid>
     {
         public string Email { get; set; }
         public string FirstName { get; set; }
