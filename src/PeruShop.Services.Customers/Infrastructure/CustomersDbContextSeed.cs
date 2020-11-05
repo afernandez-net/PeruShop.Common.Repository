@@ -29,20 +29,30 @@
                 }
             };
 
+        public static IEnumerable<Order> Orders =>
+            new Order[]
+            {
+                new Order
+                {
+                    Id = Guid.Parse( "c2f3ea40-6b01-4bab-8b67-f5dd9a7f2e39"),
+                    CustomerId = Guid.Parse( "328ec4ab-1b0b-4204-9886-b508a5d3d751"),
+                    Currency="DOL",
+                    Status = OrderStatus.Created,
+                }
+            };
+
         public static IEnumerable<OrderItem> OrderItems =>
             new OrderItem[]
             {
                 new OrderItem
                 {
-                    CustomerId = Guid.Parse( "328ec4ab-1b0b-4204-9886-b508a5d3d751"),
+                    OrderId = Guid.Parse( "c2f3ea40-6b01-4bab-8b67-f5dd9a7f2e39"),
                     ProductId = Guid.Parse( "9eab8c38-3b51-4d7e-8b4c-2266d4228a7a"),
-                    IsActive=true
                 },
                 new OrderItem
                 {
-                    CustomerId = Guid.Parse( "c8560665-e9de-41ac-85b5-d304a298af9a"),
-                    ProductId = Guid.Parse( "c0ddf0fd-e70f-46f3-9869-1f92ae0f7961"),
-                    IsActive=true
+                    OrderId = Guid.Parse( "c2f3ea40-6b01-4bab-8b67-f5dd9a7f2e39"),
+                    ProductId = Guid.Parse( "c0ddf0fd-e70f-46f3-9869-1f92ae0f7961"),                    
                 }
             };
     }

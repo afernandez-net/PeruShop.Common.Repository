@@ -29,11 +29,13 @@ namespace PeruShop.Services.Customers
 
             services.AddRepository<CustomersDbContext>()
                 .RepositoryOptions<Customer>(x => x.Seed = CustomersDbContextSeed.Customers)
+                .RepositoryOptions<Order>(x => x.Seed = CustomersDbContextSeed.Orders)
                 .RepositoryOptions<OrderItem>(x => x.Seed = CustomersDbContextSeed.OrderItems);
 
             services.AddScoped<ICustomerRepository, CustomerRepository>();
 
-            services.AddControllers();
+            services.AddControllers()
+                .AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

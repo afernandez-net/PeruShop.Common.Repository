@@ -1,5 +1,5 @@
 ﻿namespace PeruShop.Services.Customers.Controllers
-{    
+{
     using Microsoft.AspNetCore.Mvc;
     using PeruShop.Services.Customers.Domain;
     using PeruShop.Services.Customers.Repositories;
@@ -18,6 +18,15 @@
             this.customersRepository = customersRepository;
         }
 
+        // DELETE: api/Customers/5
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(Guid id)
+        {
+            await customersRepository.DeleteAsync(id);
+
+            return Ok();
+        }
+
         // GET: api/Customers
         [HttpGet]
         public async Task<IEnumerable<Customer>> Get()
@@ -27,7 +36,7 @@
 
         // GET: api/Customers/5
         [HttpGet("{id}", Name = "Get")]
-        public async Task<Customer> Get(Guid id)            
+        public async Task<Customer> Get(Guid id)
         {
             return await customersRepository.GetAsync(id);
         }
@@ -46,15 +55,6 @@
         public async Task<ActionResult> Put(Customer customer)
         {
             await customersRepository.UpdateAsync(customer);
-
-            return Ok();
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(Guid id)
-        {
-            await customersRepository.DeleteAsync(id);
 
             return Ok();
         }

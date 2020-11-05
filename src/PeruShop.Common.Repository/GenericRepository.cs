@@ -52,7 +52,7 @@
             DbSet = context.Set<T>();
         }
 
-        public IQueryable<T> Query()
+        public DbSet<T> Query()
             => DbSet;
 
         public async Task<T> GetAsync(Expression<Func<T, bool>> predicate)

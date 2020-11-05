@@ -4,7 +4,7 @@
     using PeruShop.Services.Customers.Domain;
     using System;
 
-    public interface ICustomerRepository : IGenericRepository<Customer,Guid>
+    public interface ICustomerRepository : IGenericRepository<Customer, Guid>
     {
     }
 }
