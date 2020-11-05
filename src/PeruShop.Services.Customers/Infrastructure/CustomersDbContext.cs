@@ -17,6 +17,20 @@
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<OrderItem>().HasKey(x => new { x.OrderId,x.ProductId });
+            
+            modelBuilder.Entity<Customer>().OwnsOne(x => x.Address)
+                .Property(p => p.City).HasColumnName("City");
+
+            modelBuilder.Entity<Customer>().OwnsOne(x => x.Address)
+                .Property(p => p.Country).HasColumnName("Country");
+
+            modelBuilder.Entity<Customer>().OwnsOne(x => x.Address)
+                .Property(p => p.ProvinceState).HasColumnName("ProvinceState");
+
+            modelBuilder.Entity<Customer>().OwnsOne(x => x.Address)
+                .Property(p => p.StreetAdress).HasColumnName("StreetAdress");
+
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

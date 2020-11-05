@@ -9,13 +9,15 @@
     <RepositoryUrl>https://github.com/afernandez-net/PeruShop.Common.Repository</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageProjectUrl>http://www.ventaschinaperu.com/</PackageProjectUrl>
+    <Version>1.0.2</Version>
+    <PackageReleaseNotes>Se simplifica el codigo y se agrega un ejemplo mas concreto</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.8" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.9" />
   </ItemGroup>
 
 </Project>
